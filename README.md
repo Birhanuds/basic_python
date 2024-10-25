@@ -1,2 +1,2 @@
 # basic_python
-This repostor y to lear py
+This repostor is to learninig basic python syntax
