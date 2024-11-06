@@ -1,0 +1,133 @@
+
+import pandas as pd
+
+
+
+
+
+
+			Libraries and Imports
+			
+
+			1. How do we import MatPlotLib, Pandas, and Numpy?
+			
+			import pandas as pd
+			
+			import matplotlib.pyplot as plt # THIS matplotlib referred to as plt
+			
+			import numpy as np # THIS numpy referred to as np
+			
+
+			2. Are there any other libraries you know how to import?
+			
+			import sys
+			
+			import datetime
+			
+
+			3. How do we read a CSV file and store it in a dataframe?
+			
+			df = pd.read_csv('Task4a_data.csv')
+			
+
+			4. How do we read an Excel file?
+			
+			df = pd.read_excel('Task4a_data.xls')
+			
+			Selecting Data
+			
+
+			1. How do we extract all data from one column? What does that leave us with?
+			
+			img_df1 = df["Post Type"]
+			
+
+			2. How do we extract specific data from one column? What does that leave us with?
+			
+			img_df2 = df[df["Post Type"] == "Image"]
+			
+
+			3. How do we add up row data? What does that leave us with? axis=1
+			
+			imgTotalRows = img_df.sum(axis=1, numeric_only=True)
+			
+
+			4. What do we need to add to avoid summing non-numeric data?
+			
+			numeric_only=True
+			
+
+			5. How do we add up a final sum of all row data?
+			
+			finalIMG = imgTotalRows.sum()
+			
+
+			6. How do we select specific data based upon user input e.g. post type and post time?
+			
+			type_time_df = df[(df["Post Type"] == postType) & (df["Time"] == postTime)]
+			
+
+			7. How do we sum columns of data? axis=0
+			
+			type_timeTOTALS = type_time_df.sum(axis=0, numeric_only=True)
+			
+
+			8. How do we create an average of all row/column data?
+			
+			finalIMG
+			
+			= imgTotalRows.mean()
+			
+
+
+			Printing
+			
+			1. When do we use Numpy arrays for plotting data?
+			
+			When we have multiple items of data that need plotting
+			
+			x = np.array(["Images", "Polls", "News/Updates", "Advertisement"])
+			y = np.array([finalIMG, finalPOLL, finalNEWSUP, finalAD])
+			
+
+			2. When do we use .plot() when plotting data?
+			
+			When we have a single item of data to plot
+			
+			type_timeTOTALS.plot()
+			
+
+			3. How do we title and label a chart?
+			
+			plt.title("Most Popular Social Media Post Types")
+			
+			plt.xlabel("Post Type")
+			
+			plt.ylabel("Number of Interactions")
+			
+
+			7. How do we add gid lines?
+			
+			plt.grid()
+			
+
+			9. How do we specify a bar chart?
+			
+			plt.bar(x,y)
+			
+
+			11. How do we show the chart?
+			
+			plt.show()
+			
+
+			13. How do we create a chart legend?
+			
+			type_timeTOTALS.plot(color = 'red', label = postTime)
+			plt.legend(loc="upper left")
+			
+
+			16. How can we specify a plot colour?
+			
+			type_timeTOTALS.plot(color = 'red', label = postTime)
+			plt.legend(loc="upper left")
